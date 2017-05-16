@@ -17,7 +17,6 @@
   "author": "Jakob Eklund et. al.",
   "license": "Not applicable",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-raml2html": "^0.3.0"
+    "raml2html": "^6.3.0"
   }
 }
