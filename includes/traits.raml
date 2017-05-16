@@ -1,4 +1,6 @@
-- paginated:
+#%RAML 1.0
+
+paginated:
     queryParameters:
         offset:
             description: Number of things to skip at the start of the list. A value of 0 will start from the beginning of the list.
@@ -11,7 +13,7 @@
             required: false
             default: 100
 
-- fallible:
+fallible:
     responses:
         400:
             description: The server cannot or will not process the request due to something that is perceived to be a client error.
@@ -38,19 +40,19 @@
                         }
 
 ### API evolution ###
-- future:
+future:
     responses:
       501:
         description: |
           Not Implemented (yet). Server lacks the ability to fulfill the request.
           Implies future availability (e.g., a new feature this API).
 
-- deprecated:
+deprecated:
     description: No longer a part of the supported API. Please migrate.
 
 
 ### Security traits ###
-- requiresSitekey:
+requiresSitekey:
     queryParameters:
       sitekey:
         description: Authentication token for a service consumer (i.e. a server).
@@ -79,7 +81,7 @@
               }
 
 
-- requiresSitekeyAndTicket:
+requiresSitekeyAndTicket:
     queryParameters:
       sitekey:
         description: Authentication token for a service consumer (i.e. a server).

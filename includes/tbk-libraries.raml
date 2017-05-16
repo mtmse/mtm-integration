@@ -1,6 +1,8 @@
+#%RAML 1.0
+
 # /tbk-libraries
-type: list
 is: [requiresSitekeyAndTicket, fallible, paginated]
+type: list
 description: |
     A list of libraries affiliated to TBK.
 
@@ -21,11 +23,11 @@ get:
         200:
             body:
                 application/json:
-                    schema: libraries-schema.json
+                    type: libraries.json
 
 /{libraryId}:
-    type: item
     is: [requiresSitekeyAndTicket, fallible]
+    type: item
     uriParameters:
         libraryId:
             description: UUID of the tbk patron to retrive information about
@@ -40,14 +42,14 @@ get:
                     A single library associated with TBK.
                 body:
                     application/json:
-                        schema: library-schema.json
+                        type: library.json
                         example: !include ../examples/library-example.json
                     application/xml:
                         example: !include ../examples/library-example.xml
 
     /tbk-patrons:
-        type: list
         is: [requiresSitekeyAndTicket, fallible, paginated]
+        type: list
         get:
             description: |
               Retrieve list of tbk-patrons in the library, ordered by account creation date.
@@ -73,7 +75,6 @@ get:
               includeCurrentPeriod:
                 description: |
                   Include information about the current broadband subscription period of each patron, if there is one.
-
                 type: boolean
                 default: false
                 required: false
@@ -83,13 +84,12 @@ get:
                         Successfully retrieved list of tbk-patrons in this library.
                     body:
                         application/json:
-                            schema: patrons-schema.json
+                            type: patrons.json
                             example: !include ../examples/patrons-example.json
         post:
             is: [future]
             description: Future. Create new acounts for TBK-patrons.
         /{patronId}:
-            type: item
             is: [requiresSitekeyAndTicket, fallible]
             uriParameters:
                 patronId:
@@ -110,7 +110,7 @@ get:
                     200:
                         body:
                             application/json:
-                                schema: patron-schema.json
+                                type: patron.json
                                 example: !include ../examples/patron-example.json
                             application/xml:
                                 example: !include ../examples/patron-example.xml
@@ -120,8 +120,7 @@ get:
                 is: [future]
                 description: Future.Change specific fields on an existing TBK-patron
 
-            /bookshelf-books:   #/tbk-libraries/UUID/tbk-patrons/UUID/bookshelf-books
-              type: list
+            /bookshelf-books:
               is: [requiresSitekeyAndTicket, fallible]
               patch:
                 is: [future]
@@ -133,13 +132,13 @@ get:
                   200:
                     body:
                       application/json:
-                        schema: bookshelf-books-schema.json
+                        type: bookshelf-books.json
                         example: !include ../examples/bookshelf-books-example.json
                       application/xml:
                         example: !include ../examples/bookshelf-books-example.xml
               /{mediaNr}:
-                type: item
                 is: [requiresSitekeyAndTicket, fallible]
+                type: item
                 uriParameters:
                   mediaNr:
                     description: |
@@ -162,7 +161,7 @@ get:
                         Successfully retrieved resource(s)
                       body:
                         application/json:
-                          schema: bookshelf-book-schema.json
+                          type: bookshelf-book.json
                           example: !include ../examples/bookshelf-book-example.json
                         application/xml:
                           example: !include ../examples/bookshelf-book-example.xml
@@ -174,9 +173,9 @@ get:
                       description: |
                         Successfully removed resource.
 
-            /loans:     #/tbk-libraries/UUID/tbk-patrons/UUID/loans
-                type: list
+            /loans:
                 is: [requiresSitekeyAndTicket, fallible, paginated]
+                type: list
                 get:
                     description: |
                         Book that the patron has lent, order cronologically with newest loans first.
@@ -207,25 +206,25 @@ get:
                             description: Successfully retrived list of patrons loan(s).
                             body:
                                 application/json:
-                                    schema: loans-schema.json
+                                    type: loans.json
                                     example: !include ../examples/loans-example.json
                                 application/xml:
                                     example: !include ../examples/loans-example.xml
             /broadband-subscription-periods:
+                is: [requiresSitekey, fallible, paginated]
                 type: list
-                is: []
                 description: |
                   A list of all subscription periods for the specified patron.
-                  With used and total montly bandwidth in bytes.
+                  With used and total monthly bandwidth in bytes.
                 get:
                   responses:
                     200:
                       body:
                         application/json:
-                          example: !include ../examples/broadband-subscription-periods-example.json
+                          	example: !include ../examples/broadband-subscription-periods-example.json
+                          	type: broadband-subscription-periods.json
                         application/xml:
-                          example: !include ../examples/broadband-subscription-periods-example.xml
-
+                          	example: !include ../examples/broadband-subscription-periods-example.xml
             /literary-preference-note:
               put:
                 description: |
@@ -233,7 +232,7 @@ get:
                   literary preferences will be discarded
                 body:
                   application/x-www-form-urlencoded:
-                    formParameters:
+                    properties:
                       literaryPreferenceNote:
                         description: |
                           Text that has a maximum length of 255 characters

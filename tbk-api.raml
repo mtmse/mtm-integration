@@ -1,32 +1,30 @@
-#%RAML 0.8
+#%RAML 1.0
 ---
 # This document uses the REST API Markup language (See: http://raml.org/)
 
 title: Services TBK
 baseUri: https://services.mtm.se/services
-version: v1.20.0
+version: 1.23.1-SNAPSHOT
 
 ### Include traits, resource types and schemas ####
 
 traits: !include includes/traits.raml
 resourceTypes: !include includes/resource-types.raml
 
-schemas:
-    - library.json: !include schemas/library-schema.json
-    - libraries.json: !include schemas/libraries-schema.json
-    - patron.json: !include schemas/patron-schema.json
-    - patrons.json: !include schemas/patrons-schema.json
-    - loans.json: !include schemas/statistics-loans-schema.json
-    - book.json: !include schemas/book-schema.json
-    - books.json: !include schemas/books-schema.json
-    - bookshelf-books.json: !include schemas/bookshelf-books-schema.json
-    - bookshelf-book.json: !include schemas/bookshelf-book-schema.json
-    - resource-urls.json: !include schemas/resource-urls-schema.json
-    - statistics-loans.json: !include schemas/statistics-loans-schema.json
-    - broadband-subscription-period-schema.json: !include schemas/broadband-subscription-period-schema.json
-    - broadband-subscription-periods-schema.json: !include schemas/broadband-subscription-periods-schema.json
-
-
+types:
+    library.json: !include schemas/library-schema.json
+    libraries.json: !include schemas/libraries-schema.json
+    patron.json: !include schemas/patron-schema.json
+    patrons.json: !include schemas/patrons-schema.json
+    loans.json: !include schemas/statistics-loans-schema.json
+    book.json: !include schemas/book-schema.json
+    books.json: !include schemas/books-schema.json
+    bookshelf-books.json: !include schemas/bookshelf-books-schema.json
+    bookshelf-book.json: !include schemas/bookshelf-book-schema.json
+    resource-urls.json: !include schemas/resource-urls-schema.json
+    statistics-loans.json: !include schemas/statistics-loans-schema.json
+    broadband-subscription-period.json: !include schemas/broadband-subscription-period-schema.json
+    broadband-subscription-periods.json: !include schemas/broadband-subscription-periods-schema.json
 
 
 ### Resources ###

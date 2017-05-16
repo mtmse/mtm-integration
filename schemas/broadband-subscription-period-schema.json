@@ -1,5 +1,7 @@
 {
-    "type": "object",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type":"object",
+  	"desciption": "A broadband subscription period",
     "properties": {
         "userUuid": {
             "type": "string",

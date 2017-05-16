@@ -1,26 +1,41 @@
 {
-    "mediaNr": "C99654",
-    "format": "DAISY_202",
-    "fileset": {
-        "totalSize": 12300000,
-        "playbackDuration": "PT7M"
+  "mediaNr": "CA13213",
+  "format": "DAISY_202",
+  "fileset": {
+    "playbackDuration": "PT21H11M45S",
+    "totalSize": 612713524
+  },
+  "metadata": {
+    "title": "Fossildrottningen",
+    "sabCode": "Hc/TC",
+    "author": [
+      "Michael Mortimer"
+    ],
+    "authorPseudonym": [
+      {
+        "pseudonym": "Michael Mortimer",
+        "realName": [
+          "Daniel Sjölin",
+          "Jerker Virdborg"
+        ]
+      }
+    ],
+    "isbn": "978-91-1-305565-7",
+    "coverImageUrl": "http://legimus.se/app/covers/max50x100/CA13213.png",
+    "language": [
+      "sv"
+    ],
+    "narrator": [
+      "Maria Samuelsson"
+    ],
+    "source": {
+      "publisher": "Norstedt",
+      "yearPublished": 2014
     },
-    "metadata": {
-	    "title": "Trumma på trumman",
-	    "author": ["Kerstin Frii"],
-	    "isbn": "978-91-977084-3-2",
-	    "coverImageUrl": "http://legimus.se/app/covers/max50x100/C99654.png",
-	    "language": ["sv"],
-	    "narrator": ["Ellinor Sjödén"],
-	    "translator": ["Ann-Christine Relander"],
-	    "source": {
-	        "yearPublished": 2012,
-	        "publisher": "Nordstedts"
-	    },
-	    "published": "2011-05-06T00:00:00+02:00",
-	    "publisher": "MTM"
-    }
-    "production": {
-		"reimbursementEligible": true
-  	}
+    "published": "2017-04-07",
+    "publisher": "MTM"
+  },
+  "production": {
+    "reimbursementEligible": false
+  }
 }

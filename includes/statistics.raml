@@ -1,10 +1,12 @@
+#%RAML 1.0
+
 # /statistics:
 is: [requiresSitekey]
 description:  "Aggregated statistics.  \n\n (Only requires a sitekey)"
 
 /loans-by-book:
-  type: list
   is: [requiresSitekey, paginated, fallible]
+  type: list
   description: |
     List loans per media number during a time period
     (Only requires a sitekey)
@@ -28,14 +30,14 @@ description:  "Aggregated statistics.  \n\n (Only requires a sitekey)"
         description: Filter by format. Possible values are "DAISY_202", "PEF", "TEXTVIEW", "TKN"
         type: string
         required: false
-      includePublication:
-		description: If notifications regarding authors should be included in response
-		type: boolean
-    	default: false
-    	required: false    
+      includeProduction:
+        description: If notifications regarding authors should be included in response
+        type: boolean
+        default: false
+        required: false
     responses:
       200:
         body:
           application/json:
-            schema: statistics-loans.json
+            type: statistics-loans.json
             example: !include ../examples/statistics-loans-example.json

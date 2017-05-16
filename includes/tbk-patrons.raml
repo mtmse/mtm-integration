@@ -1,10 +1,11 @@
+#%RAML 1.0
+
 # /tbk-patrons
-type: list
 is: [requiresSitekey, fallible, paginated]
+type: list
 description: |
     Manage TBK-patrons.
-
-    (Requires a sitekey with role: TBK_DISTRIBUTOR)
+   	(Requires a sitekey with role: TBK_DISTRIBUTOR)
 get:
     description: |
         Retrieve list of tbk-patrons, ordered by account creation date.
@@ -21,14 +22,14 @@ get:
         200:
           body:
             application/json:
-              schema: patrons-schema.json
+              type: patrons.json
               example: !include ../examples/patrons-example.json
             application/xml:
               example: !include ../examples/patrons-example.xml
 
 /{patronId}:
-    type: item
     is: [requiresSitekey, fallible]
+    type: item
     uriParameters:
         patronId:
             description: UUID of the tbk patron to retrive information about
@@ -41,7 +42,7 @@ get:
             200:
                 body:
                     application/json:
-                        schema: patrons-schema.json
+                        type: patron.json
                         example: !include ../examples/patron-example.json
                     application/xml:
                         example: !include ../examples/patron-example.xml
@@ -51,8 +52,8 @@ get:
                 description: Patrons account has been removed.
 
     /bookshelf-books:
-        type: list
         is: [requiresSitekey, fallible, paginated]
+        type: list
         get:
             description: |
                 Retrieve list of bookshelf books currently in users bookshelf.
@@ -60,14 +61,14 @@ get:
                 200:
                     body:
                       application/json:
-                        schema: bookshelf-books-schema.json
+                        type: bookshelf-books.json
                         example: !include ../examples/bookshelf-books-example.json
                       application/xml:
                         example: !include ../examples/bookshelf-books-example.xml
 
         /{mediaNr}:
-            type: item
             is: [requiresSitekey, fallible]
+            type: item
             uriParameters:
                 mediaNr:
                     description: |
@@ -91,7 +92,7 @@ get:
                             Successfully retrieved resource(s)
                         body:
                             application/json:
-                              schema: bookshelf-book-schema.json
+                              type: bookshelf-book.json
                               example: !include ../examples/bookshelf-book-example.json
                             application/xml:
                               example: !include ../examples/bookshelf-book-example.xml
@@ -116,12 +117,12 @@ get:
                                 Successfully retrieved resource(s)
                             body:
                                 application/json:
-                                    schema: resource-urls-schema.json
+                                    type: resource-urls.json
                                     example: !include ../examples/resource-urls-example.json
 
     /broadband-subscription-periods:
-      type: list
       is: [requiresSitekey, fallible, paginated]
+      type: list
       description: |
         A list of all subscription periods for the specified patron.
         With used and total monthly bandwidth in bytes.
@@ -130,14 +131,14 @@ get:
           200:
             body:
               application/json:
-                schema: broadband-subscription-periods-schema.json
+                type: broadband-subscription-periods.json
                 example: !include ../examples/broadband-subscription-periods-example.json
               application/xml:
                 example: !include ../examples/broadband-subscription-periods-example.xml
 
       /{period}:
-        type: item
         is: [requiresSitekey, fallible]
+        type: item
         description: |
           A single subscription period for the specified patron.
           With used and total monthly bandwidth in bytes.
@@ -154,7 +155,7 @@ get:
             200:
               body:
                 application/json:
-                  schema: broadband-subscription-period-schema.json
+                  type: broadband-subscription-period.json
                   example: !include ../examples/broadband-subscription-period-example.json
                 application/xml:
                   example: !include ../examples/broadband-subscription-period-example.xml
@@ -163,7 +164,7 @@ get:
             Set (create or overwrite) the used and total bandwidth for a single period.
           body:
             application/x-www-form-urlencoded:
-              formParameters:
+              properties:
                 usedBandwidth:
                   description: Bandwidth (in bytes) used during period.
                   type: integer

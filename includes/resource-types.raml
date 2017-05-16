@@ -1,6 +1,8 @@
-- list:
-    description: An list of <<resourcePathName>>
+#%RAML 1.0
 
+resourceTypes:
+list:
+    description: A list of <<resourcePathName>>
     get:
         is: [paginated]
         description: List of <<resourcePathName>>
@@ -8,7 +10,7 @@
             200:
                 description: |
                     Successfully retrieved list of <<resourcePathName>>
-- item:
+item:
     description: A single <<resourcePathName|!singularize>>
     get:
         responses:

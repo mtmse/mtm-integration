@@ -71,9 +71,8 @@
                 "publisher": "MTM"
             },
             "production": {
-    			"reimbursementEligible": true
-  			}
+              "reimbursementEligible": true
+            }
         }
-
     ]
 }

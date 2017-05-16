@@ -64,6 +64,29 @@
 			                        "description": "Full name of author."
 			                    }
 			                },
+			                "authorPseudonym": {
+			                    "type": "array",
+			                    "description": "Pseudonym and real name(s) of a unique creator for this book.",
+			                    "items": {
+			                    	"type": "object",
+			                    	"properties": {
+				                    	"pseudonym": {
+				                             "type": "string",
+				                             "items": {
+				                             	"description": "A pseudonym used for this book by the author."
+				                             }                             
+				                         },
+				                         "realName": {
+				                         	"type": "array",
+						                    "items": {
+						                        "type": "string",
+						                        "description": "The real full name of an author behind the pseudonym. Unknown real name is returned as N/A."
+						                    }
+				                         },
+				                     },
+			                         "required": ["pseudonym", "realName"],
+			                    },                    
+			                },		                
 			                "isbn": {
 			                    "type": "string",
 			                    "description": "International Standard Book Number of the source material. Missing ISBN is returned as an empty string."

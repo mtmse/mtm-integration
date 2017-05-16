@@ -1,3 +1,5 @@
+#%RAML 1.0
+
 # /security
 is: [fallible]
 description: "User authentication. \n\n (Only requires a sitekey)"
@@ -5,14 +7,13 @@ description: "User authentication. \n\n (Only requires a sitekey)"
 
 /ndsticket:
   is: [requiresSitekey]
-
   post:
     description: |
       Create 'ticket' (an authentication token) for a specifific user account.
       This 'ticket' can then be used by any api that acts on behalf of a specific user.
     body:
       application/x-www-form-urlencoded:
-        formParameters:
+        properties:
           ndsUserName:
             description: Users login name or email.
             type: string

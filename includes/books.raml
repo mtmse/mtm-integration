@@ -1,9 +1,11 @@
+#%RAML 1.0
+
 # /books:
-    type: list
     is: [requiresSitekey, paginated, fallible]
+    type: list
     description: |
         List all books in MTMs catalog.
-        
+
         (Only requires a sitekey)
     get:
         description:
@@ -26,20 +28,19 @@
                 required: false
                 default: "2099-01-01"
             includeProduction:
-        		description: | 
-        			If notifications regarding authors should be included in response
-			    type: boolean
-			    default: false
-			    required: false
+                description: If notifications regarding authors should be included in response
+                type: boolean
+                required: false
+                default: false
         responses:
             200:
                 body:
                     application/json:
-                        schema: books.json
+                        type: books.json
                         example: !include ../examples/books-example.json
     /{mediaNr}:
-        type: item
         is: [requiresSitekey, fallible]
+        type: item
         uriParameters:
             mediaNr:
                 description: |
@@ -47,16 +48,16 @@
         get:
             description: |
                 Retrieve information about a single book.
-            queryParameters:    
-            	includeProduction:
-        			description: | 
-        				If notifications regarding authors should be included in response
-					type: boolean
-			    	default: false
-			    	required: false    
+            queryParameters:
+              includeProduction:
+                description: |
+                  If notifications regarding authors should be included in response
+                type: boolean
+                default: false
+                required: false
             responses:
                 200:
                     body:
                         application/json:
-                            schema: book.json
+                            type: book.json
                             example: !include ../examples/book-example.json

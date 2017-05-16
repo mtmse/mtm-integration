@@ -1,6 +1,7 @@
 {
-    "type": "object",
-    "properties": {
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
         "offset": {
             "type": "integer",
             "description": "Offset of the first tbk-patron in the retrived list."
