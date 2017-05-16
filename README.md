@@ -1,2 +1,2 @@
 # mtm-integration
-Documentation aimed organizations integrating with MTM
+Documentation aimed organizations integrating with MTM.
