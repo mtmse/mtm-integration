@@ -1,0 +1,11 @@
+{
+    "uuid": "4319965a-cf3d-11e5-88d0-298cb9876117",
+    "name": "Gute folkbibliotek",
+    "email": "gute.folkbibliotek@example.com",
+    "telephone": "0498-123456",
+    "address": {
+        "streetAddress": "Gutegatan 12",
+        "postalCode": "62100",
+        "addressLocality": "Visby"
+    }
+}

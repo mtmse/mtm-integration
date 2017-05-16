@@ -1,0 +1,62 @@
+# /books:
+    type: list
+    is: [requiresSitekey, paginated, fallible]
+    description: |
+        List all books in MTMs catalog.
+        
+        (Only requires a sitekey)
+    get:
+        description:
+            Retrieve a list of books, ordered by mediaNr (an MTM media specific identifier).
+            If there is an error when parsing a marc record then the corresponding bookdetail
+            will be empty.
+        queryParameters:
+            whereFileFormat:
+                description: Filter by format. Possible values are "DAISY_202", "PEF", "TEXTVIEW", "TKN"
+                type: string
+                required: false
+            publishedAfter:
+                description: Only include books published by MTM after this date.
+                type: string
+                required: false
+                default: "1900-01-01"
+            publishedBefore:
+                description: Only include books published by MTM before this date.
+                type: string
+                required: false
+                default: "2099-01-01"
+            includeProduction:
+        		description: | 
+        			If notifications regarding authors should be included in response
+			    type: boolean
+			    default: false
+			    required: false
+        responses:
+            200:
+                body:
+                    application/json:
+                        schema: books.json
+                        example: !include ../examples/books-example.json
+    /{mediaNr}:
+        type: item
+        is: [requiresSitekey, fallible]
+        uriParameters:
+            mediaNr:
+                description: |
+                    mediaNr of the book to fetch information about.
+        get:
+            description: |
+                Retrieve information about a single book.
+            queryParameters:    
+            	includeProduction:
+        			description: | 
+        				If notifications regarding authors should be included in response
+					type: boolean
+			    	default: false
+			    	required: false    
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: book.json
+                            example: !include ../examples/book-example.json

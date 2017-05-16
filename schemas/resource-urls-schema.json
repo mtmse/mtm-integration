@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "expires": {
+            "description": "Expiration date and time given in full ISO 8601 format.",
+            "type": "string"
+        },
+        "urls": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "resource": {
+                        "type": "string",
+                        "description": "Local resource."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "Full path to the resource at the server."
+                    },
+                    "mimeType": {
+                        "type": "string",
+                        "description": "Internet media type of the file."
+                    },
+                    "size": {
+                        "type": "integer",
+                        "description": "File size in bytes."
+                    }
+                }
+            }
+        }
+    }
+}

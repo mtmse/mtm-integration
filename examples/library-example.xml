@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<library uuid="48ef1580-65e5-11e5-8b9b-9edb9d6e46f5">
+    <name>Gute folkbibliotek</name>
+    <email>gute.folkbibliotek@example.com</email>
+    <telephone>0498-123456</telephone>
+    <address>
+        <streetAddress>Gutegatan 12</streetAddress>
+        <postalCode>62100</postalCode>
+        <addressLocality>Visby</addressLocality>
+    </address>
+</library>

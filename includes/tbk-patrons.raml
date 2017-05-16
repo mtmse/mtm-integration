@@ -1,0 +1,177 @@
+# /tbk-patrons
+type: list
+is: [requiresSitekey, fallible, paginated]
+description: |
+    Manage TBK-patrons.
+
+    (Requires a sitekey with role: TBK_DISTRIBUTOR)
+get:
+    description: |
+        Retrieve list of tbk-patrons, ordered by account creation date.
+    queryParameters:
+        wherePnr:
+            description: |
+                Filter on Swedish National ID number (personnummer, sammordningsnummer, reservnummer) with a four digit year.
+                Only patrons with this exact pnr will be returned.
+                There may be more than one patron with the same National ID number.
+            type: string
+            required: false
+            example: 19001230-1234
+    responses:
+        200:
+          body:
+            application/json:
+              schema: patrons-schema.json
+              example: !include ../examples/patrons-example.json
+            application/xml:
+              example: !include ../examples/patrons-example.xml
+
+/{patronId}:
+    type: item
+    is: [requiresSitekey, fallible]
+    uriParameters:
+        patronId:
+            description: UUID of the tbk patron to retrive information about
+            type: string
+            example: EECAAAC4-65E4-11E5-AE82-9EDB9D6E46F5
+    get:
+        description: |
+            Retrieve information about a single tbk-patron
+        responses:
+            200:
+                body:
+                    application/json:
+                        schema: patrons-schema.json
+                        example: !include ../examples/patron-example.json
+                    application/xml:
+                        example: !include ../examples/patron-example.xml
+            404:
+                description: No tbk-patron with this UUID exists.
+            410:
+                description: Patrons account has been removed.
+
+    /bookshelf-books:
+        type: list
+        is: [requiresSitekey, fallible, paginated]
+        get:
+            description: |
+                Retrieve list of bookshelf books currently in users bookshelf.
+            responses:
+                200:
+                    body:
+                      application/json:
+                        schema: bookshelf-books-schema.json
+                        example: !include ../examples/bookshelf-books-example.json
+                      application/xml:
+                        example: !include ../examples/bookshelf-books-example.xml
+
+        /{mediaNr}:
+            type: item
+            is: [requiresSitekey, fallible]
+            uriParameters:
+                mediaNr:
+                    description: |
+                        The MTM content ID (sv. 'Medienummer') of a book in the patrons bookshelf.
+                    type: string
+                    example: C16626
+            put:
+              is: [deprecated]
+              description: |
+                Deprecated. Place a book in the bookshelf.
+              responses:
+                204:
+                  description: |
+                    Successfully updated the resource.
+            get:
+                description: |
+                    Retrieve metadata for a single bookshelf book.
+                responses:
+                    200:
+                        description: |
+                            Successfully retrieved resource(s)
+                        body:
+                            application/json:
+                              schema: bookshelf-book-schema.json
+                              example: !include ../examples/bookshelf-book-example.json
+                            application/xml:
+                              example: !include ../examples/bookshelf-book-example.xml
+            delete:
+              is: [deprecated]
+              description: |
+                Deprecated. Remove book from bookshelf
+              responses:
+                204:
+                  description: |
+                    Successfully removed resource.
+
+            /resource-urls:
+                is: [requiresSitekey, fallible]
+                get:
+                    description: |
+                        Retrieve full urls to watermarked book resources.
+                        These url:s have are only available for a limited time.
+                    responses:
+                        200:
+                            description: |
+                                Successfully retrieved resource(s)
+                            body:
+                                application/json:
+                                    schema: resource-urls-schema.json
+                                    example: !include ../examples/resource-urls-example.json
+
+    /broadband-subscription-periods:
+      type: list
+      is: [requiresSitekey, fallible, paginated]
+      description: |
+        A list of all subscription periods for the specified patron.
+        With used and total monthly bandwidth in bytes.
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                schema: broadband-subscription-periods-schema.json
+                example: !include ../examples/broadband-subscription-periods-example.json
+              application/xml:
+                example: !include ../examples/broadband-subscription-periods-example.xml
+
+      /{period}:
+        type: item
+        is: [requiresSitekey, fallible]
+        description: |
+          A single subscription period for the specified patron.
+          With used and total monthly bandwidth in bytes.
+        uriParameters:
+          period:
+            description: |
+              Identifies a single subscription period (year and month)
+            type: string
+            example: 2016-12
+        get:
+          description: |
+            Get the used and total bandwidth for a single period.
+          responses:
+            200:
+              body:
+                application/json:
+                  schema: broadband-subscription-period-schema.json
+                  example: !include ../examples/broadband-subscription-period-example.json
+                application/xml:
+                  example: !include ../examples/broadband-subscription-period-example.xml
+        put:
+          description: |
+            Set (create or overwrite) the used and total bandwidth for a single period.
+          body:
+            application/x-www-form-urlencoded:
+              formParameters:
+                usedBandwidth:
+                  description: Bandwidth (in bytes) used during period.
+                  type: integer
+                  example: 56987324
+                totalBandwidth:
+                  description: Total Bandwidth (in bytes) allocated during period.
+                  type: integer
+                  example: 100000000
+        delete:
+          description: |
+            Remove a previously registered subscription-period.

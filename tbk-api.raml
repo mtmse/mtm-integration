@@ -1,0 +1,45 @@
+#%RAML 0.8
+---
+# This document uses the REST API Markup language (See: http://raml.org/)
+
+title: Services TBK
+baseUri: https://services.mtm.se/services
+version: v1.20.0
+
+### Include traits, resource types and schemas ####
+
+traits: !include includes/traits.raml
+resourceTypes: !include includes/resource-types.raml
+
+schemas:
+    - library.json: !include schemas/library-schema.json
+    - libraries.json: !include schemas/libraries-schema.json
+    - patron.json: !include schemas/patron-schema.json
+    - patrons.json: !include schemas/patrons-schema.json
+    - loans.json: !include schemas/statistics-loans-schema.json
+    - book.json: !include schemas/book-schema.json
+    - books.json: !include schemas/books-schema.json
+    - bookshelf-books.json: !include schemas/bookshelf-books-schema.json
+    - bookshelf-book.json: !include schemas/bookshelf-book-schema.json
+    - resource-urls.json: !include schemas/resource-urls-schema.json
+    - statistics-loans.json: !include schemas/statistics-loans-schema.json
+    - broadband-subscription-period-schema.json: !include schemas/broadband-subscription-period-schema.json
+    - broadband-subscription-periods-schema.json: !include schemas/broadband-subscription-periods-schema.json
+
+
+
+
+### Resources ###
+
+# Common resources
+/books: !include includes/books.raml
+/statistics: !include includes/statistics.raml
+
+# Older resources
+# (may not always follow more recently esablished API konventions)
+/security: !include includes/security.raml
+/user: !include includes/user.raml
+
+# TBK-specific resources
+/tbk-patrons: !include includes/tbk-patrons.raml
+/tbk-libraries: !include includes/tbk-libraries.raml

@@ -1,0 +1,245 @@
+# /tbk-libraries
+type: list
+is: [requiresSitekeyAndTicket, fallible, paginated]
+description: |
+    A list of libraries affiliated to TBK.
+
+    (Requires a sitekey with siterole TBK_ADMIN and a ticket for a user with the appropriate permissions)
+get:
+    description: |
+        Get a list of TBK libraries. Includes the represented users (the tickets) home library and all libraries directly under that library.
+    queryParameters:
+      includeAllUnderlying:
+        description: |
+          Also include the tbk-affiliated libraries that are indirectly under the represented users library.
+          This is only relevant if the represented user is in the *root library*.
+        type: boolean
+        default: false
+        required: false
+
+    responses:
+        200:
+            body:
+                application/json:
+                    schema: libraries-schema.json
+
+/{libraryId}:
+    type: item
+    is: [requiresSitekeyAndTicket, fallible]
+    uriParameters:
+        libraryId:
+            description: UUID of the tbk patron to retrive information about
+            type: string
+            example: e2a5ced6-ce80-11e5-a842-46f94124ff49
+    get:
+        description: |
+            Get information about one specific TBK library.
+        responses:
+            200:
+                description: |
+                    A single library associated with TBK.
+                body:
+                    application/json:
+                        schema: library-schema.json
+                        example: !include ../examples/library-example.json
+                    application/xml:
+                        example: !include ../examples/library-example.xml
+
+    /tbk-patrons:
+        type: list
+        is: [requiresSitekeyAndTicket, fallible, paginated]
+        get:
+            description: |
+              Retrieve list of tbk-patrons in the library, ordered by account creation date.
+            queryParameters:
+              somethingLike:
+                description: |
+                    Filter on some part of a users name, adress or similar.
+                    Only patrons whos username, actuall name, email or adress contains this value will be listed.
+                    Matching is not case sensitive and must only match a subset of the string.
+                    (ie. a search for 'bottom' will match both the patron 'Nevil Longbottom' and 'Bottom bridge street 4').
+                    The set of searched fields may be extended in the future.
+                type: string
+                required: false
+                example: Granger
+              includeAllUnderlying:
+                description: |
+                  Also include the tbk-patrons that are in libraries under the specified.
+                  Patrons often reside in sub-libraries while library staff are found in
+                  libraries higher up in the hierachy.
+                type: boolean
+                default: false
+                required: false
+              includeCurrentPeriod:
+                description: |
+                  Include information about the current broadband subscription period of each patron, if there is one.
+
+                type: boolean
+                default: false
+                required: false
+            responses:
+                200:
+                    description: |
+                        Successfully retrieved list of tbk-patrons in this library.
+                    body:
+                        application/json:
+                            schema: patrons-schema.json
+                            example: !include ../examples/patrons-example.json
+        post:
+            is: [future]
+            description: Future. Create new acounts for TBK-patrons.
+        /{patronId}:
+            type: item
+            is: [requiresSitekeyAndTicket, fallible]
+            uriParameters:
+                patronId:
+                    description: UUID of the tbk patron to retrive information about
+                    type: string
+                    example: eecaaac4-65e4-11e5-ae82-9edb9d6e46f5
+            get:
+                description: |
+                    Retrieve information about a single tbk-patron belonging to a specific library
+                queryParameters:
+                  includeCurrentPeriod:
+                    description: |
+                      Include information about the current broadband subscription period of the patron, if there is one.
+                    type: boolean
+                    default: false
+                    required: false
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: patron-schema.json
+                                example: !include ../examples/patron-example.json
+                            application/xml:
+                                example: !include ../examples/patron-example.xml
+                    404:
+                        description: No tbk-patron with this UUID exists in this library.
+            patch:
+                is: [future]
+                description: Future.Change specific fields on an existing TBK-patron
+
+            /bookshelf-books:   #/tbk-libraries/UUID/tbk-patrons/UUID/bookshelf-books
+              type: list
+              is: [requiresSitekeyAndTicket, fallible]
+              patch:
+                is: [future]
+                description: Future. Uppdate multiple bookshelf books in batch.
+              get:
+                description: |
+                  Retrieve list of bookshelf books currently in users bookshelf.
+                responses:
+                  200:
+                    body:
+                      application/json:
+                        schema: bookshelf-books-schema.json
+                        example: !include ../examples/bookshelf-books-example.json
+                      application/xml:
+                        example: !include ../examples/bookshelf-books-example.xml
+              /{mediaNr}:
+                type: item
+                is: [requiresSitekeyAndTicket, fallible]
+                uriParameters:
+                  mediaNr:
+                    description: |
+                      The MTM content ID (sv. 'Medienummer') of a book in the patrons bookshelf.
+                    type: string
+                    example: C16626
+                put:
+                  description: |
+                    Place a book in the bookshelf.
+                  responses:
+                    204:
+                      description: |
+                        Successfully updated the resource.
+                get:
+                  description: |
+                    Retrieve metadata for a single bookshelf book.
+                  responses:
+                    200:
+                      description: |
+                        Successfully retrieved resource(s)
+                      body:
+                        application/json:
+                          schema: bookshelf-book-schema.json
+                          example: !include ../examples/bookshelf-book-example.json
+                        application/xml:
+                          example: !include ../examples/bookshelf-book-example.xml
+                delete:
+                  description: |
+                    Remove book from bookshelf
+                  responses:
+                    204:
+                      description: |
+                        Successfully removed resource.
+
+            /loans:     #/tbk-libraries/UUID/tbk-patrons/UUID/loans
+                type: list
+                is: [requiresSitekeyAndTicket, fallible, paginated]
+                get:
+                    description: |
+                        Book that the patron has lent, order cronologically with newest loans first.
+                    queryParameters:
+                        registeredBefore:
+                            description: ISO 8601 Date. Include only books lent before the start of this day.
+                            type: string
+                            required: false
+                        registeredAfter:
+                            description: ISO 8601 Date. Include only books lent after the start of this day.
+                            type: string
+                            required: false
+                        orderBy:
+                            description: |
+                              How the registered loans are ordered. Options:
+                              - *mediaNr+asc* - Order by mediaNr, lowest numbers first
+                              - *mediaNr+desc* - Order by mediaNr, highest numbers first
+                              - *title+asc* - Order by book title, from 'A' to 'Z' (or rather from '0' to 'Ö')
+                              - *title+desc* - Order by book title, from 'Z' to 'A' (or rather from 'Ö' to '0')
+                              - *registered+asc* - Order by loan registration date, oldest first
+                              - *registered+desc* - Order by loan registration date, newest first
+                            type: string
+                            required: false
+                            default: registered+desc
+
+                    responses:
+                        200:
+                            description: Successfully retrived list of patrons loan(s).
+                            body:
+                                application/json:
+                                    schema: loans-schema.json
+                                    example: !include ../examples/loans-example.json
+                                application/xml:
+                                    example: !include ../examples/loans-example.xml
+            /broadband-subscription-periods:
+                type: list
+                is: []
+                description: |
+                  A list of all subscription periods for the specified patron.
+                  With used and total montly bandwidth in bytes.
+                get:
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                          example: !include ../examples/broadband-subscription-periods-example.json
+                        application/xml:
+                          example: !include ../examples/broadband-subscription-periods-example.xml
+
+            /literary-preference-note:
+              put:
+                description: |
+                  Update literary preferences for a tbk patron. If no value is sent
+                  literary preferences will be discarded
+                body:
+                  application/x-www-form-urlencoded:
+                    formParameters:
+                      literaryPreferenceNote:
+                        description: |
+                          Text that has a maximum length of 255 characters
+                        type: string
+                        example: This patron really likes Harry Potter fan fiction
+                responses:
+                  204:
+                    description: |
+                      Successfully updated the resource.

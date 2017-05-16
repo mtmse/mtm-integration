@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "type":"object",
+  "desciption": "A single book in the bookshelf.",
+  "properties": {
+    "mediaNr": {
+      "type": "string"
+    },
+    "added": {
+      "type": "string"
+    },
+    "metadataUpdated": {
+      "type": "string",
+      "description":
+        "ISO 8601 date of when the meta data (title, author etc.) was last uppdated."
+    },
+    "filesetUpdated": {
+      "type": "string",
+      "description":
+        "Future. ISO 8601 date of when media files (mp3, siml etc) where last updated."
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,113 @@
+- paginated:
+    queryParameters:
+        offset:
+            description: Number of things to skip at the start of the list. A value of 0 will start from the beginning of the list.
+            type: number
+            required: false
+            default: 0
+        limit:
+            description: Number maximum number of things to return. The server may set a lower limit than requested.
+            type: number
+            required: false
+            default: 100
+
+- fallible:
+    responses:
+        400:
+            description: The server cannot or will not process the request due to something that is perceived to be a client error.
+            body:
+                application/json:
+                    example: |
+                        {
+                            "serverTime": "2015-09-28T15:03:20+00:00",
+                            "errorCode": "INVALID_PARAMETER",
+                            "errorMessage": "You have failed me."
+                        }
+        405:
+            description: Method Not Allowed. Request was not a GET-request.
+
+        500:
+            description: Internal Server Error. The server failed to handle what it interpreted as a valid request.
+            body:
+                application/json:
+                    example: |
+                        {
+                            "serverTime": "2015-09-28T15:03:20+00:00",
+                            "errorCode": "INTERNAL_SERVER_ERROR",
+                            "errorMessage": "I have failed you."
+                        }
+
+### API evolution ###
+- future:
+    responses:
+      501:
+        description: |
+          Not Implemented (yet). Server lacks the ability to fulfill the request.
+          Implies future availability (e.g., a new feature this API).
+
+- deprecated:
+    description: No longer a part of the supported API. Please migrate.
+
+
+### Security traits ###
+- requiresSitekey:
+    queryParameters:
+      sitekey:
+        description: Authentication token for a service consumer (i.e. a server).
+        type: string
+        required: true
+    responses:
+      401:
+        description: Unauthorized. A valid site key has not been provided.
+        body:
+          application/json:
+            example: |
+              {
+                "serverTime": "2015-11-05T15:15:06+00:00",
+                "errorCode": "AUTHORIZATION_ERROR",
+                "errorMessage": "The provided sitekey is not valid."
+              }
+      403:
+        description: The sitekey is valid, but it does not grant access to this resource.
+        body:
+          application/json:
+            example: |
+              {
+                "serverTime": "2015-11-05T15:15:06+00:00",
+                "errorCode": "AUTHORIZATION_ERROR",
+                "errorMessage": "The provided sitekey does not grant access to this resource."
+              }
+
+
+- requiresSitekeyAndTicket:
+    queryParameters:
+      sitekey:
+        description: Authentication token for a service consumer (i.e. a server).
+        type: string
+        required: true
+      ticket:
+        description: Warrant allowing the consumer (i.e. sevrer) to act on behalf of a user (i.e. a human).
+        type: string
+        required: true
+
+    responses:
+      401:
+        description: Unauthorized. A valid site key or ticket has not been provided.
+        body:
+          application/json:
+            example: |
+              {
+                "serverTime": "2015-11-05T15:15:06+00:00",
+                "errorCode": "AUTHORIZATION_ERROR",
+                "errorMessage": "The provided sitekey is not valid."
+              }
+      403:
+        description: Both sitekey and the ticket are valid, but it they do not grant access to this resource.
+        body:
+          application/json:
+            example: |
+              {
+                "serverTime": "2015-11-05T15:15:06+00:00",
+                "errorCode": "AUTHORIZATION_ERROR",
+                "errorMessage": "The provided sitekey does not grant access to this resource."
+              }

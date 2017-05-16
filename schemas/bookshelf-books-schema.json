@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+
+  "type": "object",
+  "properties": {
+    "offset": {
+        "type": "integer",
+        "description": "Offset of the first tbk-patron in the retrived list."
+    },
+    "limit": {
+        "type": "integer",
+        "description": "Maximum number of patrons in the retrived list."
+    },
+    "total": {
+        "type": "integer",
+        "description": "Total number of tbk-patrons (matching filters, if provided)."
+    },
+
+  	"bookshelfBook": {
+      "type": "array",
+      "description": "A list of books.",
+      "items": {
+        "type":"object",
+        "desciption": "A single book in the bookshelf.",
+        "properties": {
+          "mediaNr": {
+            "type": "string"
+          },
+        	"added": {
+            "type": "string"
+          },
+          "metadataUpdated": {
+            "type": "string"
+          },
+          "filesetUpdated": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

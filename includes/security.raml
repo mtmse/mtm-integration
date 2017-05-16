@@ -1,0 +1,43 @@
+# /security
+is: [fallible]
+description: "User authentication. \n\n (Only requires a sitekey)"
+
+
+/ndsticket:
+  is: [requiresSitekey]
+
+  post:
+    description: |
+      Create 'ticket' (an authentication token) for a specifific user account.
+      This 'ticket' can then be used by any api that acts on behalf of a specific user.
+    body:
+      application/x-www-form-urlencoded:
+        formParameters:
+          ndsUserName:
+            description: Users login name or email.
+            type: string
+            example: ronweasley
+          ndsUserPasswd:
+            description: Users password.
+            type: string
+            example: p1gw1dg30n
+
+    responses:
+      200:
+        description: |
+          Returns the ticket if the provided credntials where correct.
+
+        body:
+          text/plain:
+            example: |
+              ab1c4f58-c0fe-4b0e-935b-796efd215fbb
+
+/validate:
+  is: [requiresSitekeyAndTicket]
+  get:
+    description: |
+      Check that the ticket is valid.
+    responses:
+      200:
+        description: |
+          The ticket is valid.

@@ -1,0 +1,35 @@
+{
+  "total": 4,
+  "offset": 0,
+  "limit": 100,
+  "broadbandSubscriptionPeriod": [
+    {
+      "userUuid": "0ccbd554-4a38-802e-f991-57a420920b22",
+      "usedBandwidth": 900354782,
+      "updated": "2017-02-27T11:38:58.583+01:00",
+      "totalBandwidth": 1000000000,
+      "period": "2016-07"
+    },
+    {
+      "userUuid": "0ccbd554-4a38-802e-f991-57a420920b22",
+      "usedBandwidth": 900354782,
+      "updated": "2017-02-27T10:46:41.892+01:00",
+      "totalBandwidth": 1000000000,
+      "period": "2016-04"
+    },
+    {
+      "userUuid": "0ccbd554-4a38-802e-f991-57a420920b22",
+      "usedBandwidth": 900354782,
+      "updated": "2017-02-27T10:47:13.498+01:00",
+      "totalBandwidth": 1000000000,
+      "period": "2016-03"
+    },
+    {
+      "userUuid": "0ccbd554-4a38-802e-f991-57a420920b22",
+      "usedBandwidth": 900354782,
+      "updated": "2017-02-27T10:46:26.553+01:00",
+      "totalBandwidth": 1000000000,
+      "period": "2016-02"
+    }
+  ]
+}

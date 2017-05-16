@@ -1,0 +1,26 @@
+#%RAML 0.8
+---
+# This document uses the REST API Markup language (See: http://raml.org/)
+
+
+title: MTM Services
+baseUri: https://services.mtm.se/services
+
+#
+# This document assembles only the subset needed for the ALIS integration
+#
+
+### Include traits, resource types and schemas ####
+
+traits: !include includes/traits.raml
+resourceTypes: !include includes/resource-types.raml
+
+schemas:
+    - book.json: !include schemas/book-schema.json
+    - books.json: !include schemas/books-schema.json
+    - statistics-loans.json: !include schemas/statistics-loans-schema.json
+
+### Resources ###
+
+/books: !include includes/books.raml
+/statistics: !include includes/statistics.raml

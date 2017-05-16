@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<user uuid="0b190a5b-4d6d-ff6f-7936-e97090a02735" ndsUserName="patron">
+    <address>
+        <addressLine>TESTGATA-999</addressLine>
+        <city>Devon</city>
+        <country>England</country>
+        <zipCode>12345</zipCode>
+    </address>
+    <emailAddress>patron@test.tpb.se</emailAddress>
+    <firstName>patron</firstName>
+    <nationalIdNumber>190001010008</nationalIdNumber>
+    <phoneNumber type="HOME" number=""/>
+    <role>streamer</role>
+    <role>download</role>
+    <role>tbkAdministrator</role>
+    <surName>patronson</surName>
+    <userSelfUpdate>2016-06-03T09:26:15.034+02:00</userSelfUpdate>
+    <userSelfUpdateNeeded>false</userSelfUpdateNeeded>
+</user>

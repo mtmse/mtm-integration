@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "offset": {
+            "type": "integer",
+            "description": "Offset of the first tbk-patron in the retrived list."
+        },
+        "limit": {
+            "type": "integer",
+            "description": "Maximum number of patrons in the retrived list."
+        },
+        "total": {
+            "type": "integer",
+            "description": "Total number of broadband subscription periods (matching filters, if provided)."
+        },
+        "broadbandSubscriptionPeriod": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+			        "userUuid": {
+			            "type": "string",
+			            "description": "Internal unique representation of a patrons account at MTM."
+			        },
+			        "period": {
+			            "type": "string",
+			            "description": "The subscription period given to user",
+			            "example": "2016-02"
+			        },
+			        "usedBandwidth": {
+			            "type": "integer",
+			            "description": "The number of used bandwidth by user",
+			            "example": "900356"
+			        },
+			        "totalBandwith": {
+			            "type": "integer",
+			            "description": "Total number of bandwidth given to user",
+			            "example": "1000000000"
+			        },
+			        "updated": {
+			            "type": "string",
+			            "description": "Date of last time the subscription period was updated",
+			            "example": "2017-02-27T10:46:26.553+01:00"
+			        }
+			    }
+            }
+        }
+    }
+}

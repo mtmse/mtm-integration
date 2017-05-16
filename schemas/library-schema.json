@@ -1,0 +1,42 @@
+{
+	"title": "Description of a library that distributes MTM:s books.",
+
+	"required": ["uuid", "name"],
+	"properties": {
+        "uuid": {
+            "type": "string",
+            "description": "Internal unique representation of a patrons account at MTM."
+        },
+		"name": {
+			"type": "string",
+			"description": "The name of the library."
+		},
+		"email": {
+			"type": "string",
+			"description": "The library contact email."
+		},
+		"telephone": {
+			"type": "string",
+			"description": "The library contact phone number."
+		},
+		"address": {
+			"type": "object",
+			"description":"Physical address of the library",
+			"required": ["streetAddress", "postalCode", "addressLocality"],
+			"properties": {
+				"streetAddress": {
+					"type": "string",
+					"description": "The street address."
+					},
+				"postalCode": {
+					"type": "string",
+					"description": "The zip postal code. The swedish 'postkod'."
+					},
+				"addressLocality": {
+					"type": "string",
+					"description": "The locality (related to the zip code). The swedish 'postort'."
+				}
+			}
+		}
+	}
+}

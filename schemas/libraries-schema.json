@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "offset": {
+            "type": "integer",
+            "description": "Offset of the first tbk-patron in the retrived list."
+        },
+        "limit": {
+            "type": "integer",
+            "description": "Maximum number of patrons in the retrived list."
+        },
+        "total": {
+            "type": "integer",
+            "description": "Total number of tbk-patrons (matching filters, if provided)."
+        },
+        "library": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "description": "Internal unique representation of a patrons account at MTM."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the library."
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "The library contact email."
+                    },
+                    "telephone": {
+                        "type": "string",
+                        "description": "The library contact phone number."
+                    },
+                    "address": {
+                        "type": "object",
+                        "description":"Physical address of the library",
+                        "required": ["streetAddress", "postalCode", "addressLocality"],
+                        "properties": {
+                            "streetAddress": {
+                                "type": "string",
+                                "description": "The street address."
+                                },
+                            "postalCode": {
+                                "type": "string",
+                                "description": "The zip postal code. The swedish 'postkod'."
+                                },
+                            "addressLocality": {
+                                "type": "string",
+                                "description": "The locality (related to the zip code). The swedish 'postort'."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

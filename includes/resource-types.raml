@@ -1,0 +1,27 @@
+- list:
+    description: An list of <<resourcePathName>>
+
+    get:
+        is: [paginated]
+        description: List of <<resourcePathName>>
+        responses:
+            200:
+                description: |
+                    Successfully retrieved list of <<resourcePathName>>
+- item:
+    description: A single <<resourcePathName|!singularize>>
+    get:
+        responses:
+            200:
+                description: |
+                    Successfully retrieved a single <<resourcePathName|!singularize>>
+            404:
+                description: Not Found. The requested <<resourcePathName|!singularize>> has not been found.
+                body:
+                    application/json:
+                        example: |
+                            {
+                              "serverTime": "2015-11-05T15:15:06+00:00",
+                              "errorCode": "ITEM_NOT_FOUND",
+                              "errorMessage": "The requested resource has not been found"
+                            }

@@ -1,0 +1,108 @@
+{
+  "offset": 0,
+  "total": 3,
+  "limit": 3,
+  "registeredAfter": "2016-05-21T00:00:00+02:00",
+  "registeredBefore": "2016-06-23T00:00:00+02:00",
+  "loanedBook": [
+    {
+      "sumLoans": 2,
+      "book": {
+        "mediaNr": "C16626",
+        "format": "DAISY_202",
+        "fileset": {
+          "totalSize": 0
+        },
+        "metadata": {
+          "title": "Bläckfiskresan",
+          "author": [
+            "Marie Oskarsson"
+          ],
+          "isbn": "",
+          "coverImageUrl": "http://legimus.se/app/covers/max50x100/C16626.png",
+          "language": [
+            "sv"
+          ],
+          "narrator": [
+            "Bert Kolker"
+          ],
+          "source": {
+            "publisher": "R&S",
+            "yearPublished": 2001
+          },
+          "published": "2015-09-22",
+          "publisher": "TPB"
+        },
+        "production": {
+          "reimbursementEligible": true
+        }
+      }
+    },
+    {
+      "sumLoans": 1,
+      "book": {
+        "mediaNr": "CA26588",
+        "format": "DAISY_202",
+        "fileset": {
+          "totalSize": 0
+        },
+        "metadata": {
+          "title": "Nödåret",
+          "author": [
+            "Aki Ollikainen"
+          ],
+          "isbn": "978-91-7461-499-2",
+          "coverImageUrl": "http://legimus.se/app/covers/max50x100/CA26588.png",
+          "language": [
+            "sv"
+          ],
+          "narrator": [
+            "Anna Godenius"
+          ],
+          "translator": [
+            "Ann-Christine Relander"
+          ],
+          "source": {
+            "publisher": "N/A",
+            "yearPublished": 2016
+          },
+          "published": "2016-03-07",
+          "publisher": "MTM"
+        },
+        "production": {
+          "reimbursementEligible": false
+        }
+      }
+    },
+    {
+      "sumLoans": 1,
+      "book": {
+        "mediaNr": "P15242",
+        "format": "PEF",
+        "fileset": {
+          "totalSize": 0
+        },
+        "metadata": {
+          "title": "Barn av sin stad",
+          "author": [
+            "Per Anders Fogelström"
+          ],
+          "isbn": "",
+          "coverImageUrl": "http://legimus.se/app/covers/max50x100/P15242.png",
+          "language": [
+            "sv"
+          ],
+          "source": {
+            "publisher": "LL-förl.",
+            "yearPublished": 1997
+          },
+          "published": "2015-03-04",
+          "publisher": "TPB"
+        },
+        "production": {
+          "reimbursementEligible": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+    "offset": 25402,
+    "limit": 2,
+    "total": 110000,
+
+    "book": [
+        {
+            "mediaNr": "C99654",
+            "format": "DAISY_202",
+            "fileset": {
+                "totalSize": 12300000,
+                "playbackDuration": "PT7M"
+            },
+            "metadata": {
+                "title": "Trumma på trumman",
+                "author": ["Kerstin Frii"],
+                "isbn": "978-91-977084-3-2",
+                "coverImageUrl": "http://legimus.se/app/covers/max50x100/C99654.png",
+                "language": ["sv"],
+                "narrator": ["Ellinor Sjödén"],
+                "translator": ["Ann-Christine Relander"],
+                "source": {
+                    "yearPublished": 2012,
+                    "publisher": "Nordstedts"
+                },
+                "published": "2011-05-06T00:00:00+02:00",
+                "publisher": "MTM"
+            }
+        },
+        {
+            "mediaNr": "C16626",
+            "format": "DAISY_202",
+            "fileset": {
+                "totalSize": 28000000,
+                "playbackDuration": "PT1H19M"
+            },
+            "metadata": {
+                "title": "Bläckfiskresan",
+                "author": ["Marie Oskarsson"],
+                "isbn": "454-33-977084-3-2",
+                "coverImageUrl": "http://legimus.se/app/covers/max50x100/C16626.png",
+                "language": ["sv"],
+                "narrator": ["Ellinor Sjödén"],
+                "source": {
+                    "yearPublished": 2008,
+                    "publisher": "Gleerups utbildning"
+                },
+                "published": "2001-11-14T00:00:00+01:00",
+                "publisher": "MTM"
+            }
+        },
+        {
+            "mediaNr": "C80090",
+            "format": "DAISY_202",
+            "fileset": {
+                "totalSize": 495000000,
+                "playbackDuration": "PT20H33M"
+            },
+            "metadata": {
+                "title": "Harry Potter and the half-blood prince",
+                "author": ["Joanne K Rowling"],
+                "isbn": "978-04-397859-6-9",
+                "coverImageUrl": "http://legimus.se/app/covers/max50x100/C80090.png",
+                "language": ["en"],
+                "narrator": ["Stephen Fry"],
+                "source": {
+                    "yearPublished": 2006,
+                    "publisher": "Scholastic Paperbacks"
+                },
+                "published": "2005-11-14T00:00:00+01:00",
+                "publisher": "MTM"
+            },
+            "production": {
+    			"reimbursementEligible": true
+  			}
+        }
+
+    ]
+}

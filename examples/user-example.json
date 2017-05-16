@@ -1,0 +1,25 @@
+{
+  "@uuid": "0b190a5b-4d6d-ff6f-7936-e97090a02735",
+  "@ndsUserName": "patron",
+  "address": {
+    "addressLine": "The Burrow",
+    "city": "Devon",
+    "country": "England",
+    "zipCode": "12345"
+  },
+  "emailAddress": "ron.weasly@hogwarts.gov.uk",
+  "firstName": "Ronald",
+  "nationalIdNumber": "19800301MTM1",
+  "phoneNumber": {
+    "@type": "HOME",
+    "@number": ""
+  },
+  "role": [
+    "streamer",
+    "download",
+    "tbkAdministrator"
+  ],
+  "surName": "Weasley",
+  "userSelfUpdate": "2016-06-03T09:26:15.034+02:00",
+  "userSelfUpdateNeeded": "false"
+}

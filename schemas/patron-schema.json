@@ -1,0 +1,136 @@
+{
+    "type": "object",
+    "required": ["pnr","uuid","email","library"],
+    "properties": {
+        "uuid": {
+            "type": "string",
+            "description": "Internal unique representation of a patrons account at MTM."
+        },
+        "username": {
+            "type": "string",
+            "description": "Name used (in combination with password) when logging in to MTM:s services."
+        },
+        "pnr": {
+            "type": "string",
+            "description": "A Swedish National ID number, dash separatyed and with full (4 digit) year.",
+            "pattern": "\\d{8}-(\\d{4}|MTM\\d)",
+            "example": "19001231-1234"
+        },
+        "givenName": {
+            "type": "string",
+            "description": "The persons forename",
+            "example": "Niklas Petter"
+        },
+        "familyName": {
+            "type": "string",
+            "description": "The persons family (last) name",
+            "example": "Pettersson"
+        },
+        "email": {
+            "type": "string",
+            "description": "Email address",
+            "example": "niklas.pettersson@mtm.se"
+        },
+        "telephone": {
+            "type": "string",
+            "description": "Telephone number",
+            "example": "08-12345678"
+        },
+        "address": {
+            "type": "object",
+            "properties": {
+                "streetAddress": {
+                    "type": "string",
+                    "description": "The postal address including road or postal box with number"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "description": "Zip code according to Swedish standard (5 numbers)",
+                    "pattern": "\\d{5}",
+                    "example": "17541"
+                },
+                "addressLocality": {
+                    "type": "string",
+                    "description": "The locality (relevant for the zip code given)"
+                }
+            }
+        },
+        "literaryPreferenceNote": {
+            			"type": "string",
+            			"description": "Literary preferences for a tbk patron",
+            			"example": "This patron really likes Harry Potter fan fiction"
+        },
+		"currentBroadbandSubscriptionPeriod": {
+            "type": "object",
+            "required": ["userUuid", "period", "usedBandwidth", "totalBandwidth", "updated"],
+		    "properties": {
+		        "userUuid": {
+		            "type": "string",
+		            "description": "Internal unique representation of a patrons account at MTM."
+		        },
+		        "period": {
+		            "type": "string",
+		            "description": "The subscription period given to user",
+		            "example": "2016-02"
+		        },
+		        "usedBandwidth": {
+		            "type": "integer",
+		            "description": "The amount of used bandwidth by user in bytes",
+		            "example": "900356"
+		        },
+		        "totalBandwidth": {
+		            "type": "integer",
+		            "description": "Total amount of bandwidth given to user in bytes",
+		            "example": "1000000000"
+		        },
+		        "updated": {
+		            "type": "string",
+		            "description": "Date of last time the subscription period was updated",
+		            "example": "2017-02-27T10:46:26.553+01:00"
+		        }
+		    }
+        },	
+        "library": {
+            "type": "object",
+			"title": "Description of a library that distributes MTM:s books.",		
+			"required": ["uuid", "name"],
+			"properties": {
+		        "uuid": {
+		            "type": "string",
+		            "description": "Internal unique representation of a patrons account at MTM."
+		        },
+				"name": {
+					"type": "string",
+					"description": "The name of the library."
+				},
+				"email": {
+					"type": "string",
+					"description": "The library contact email."
+				},
+				"telephone": {
+					"type": "string",
+					"description": "The library contact phone number."
+				},
+				"address": {
+					"type": "object",
+					"description":"Physical address of the library",
+					"required": ["streetAddress", "postalCode", "addressLocality"],
+					"properties": {
+						"streetAddress": {
+							"type": "string",
+							"description": "The street address."
+							},
+						"postalCode": {
+							"type": "string",
+							"description": "The zip postal code. The swedish 'postkod'."
+							},
+						"addressLocality": {
+							"type": "string",
+							"description": "The locality (related to the zip code). The swedish 'postort'."
+						}
+					}
+				}
+			}		
+        }
+    }
+}

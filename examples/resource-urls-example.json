@@ -1,0 +1,99 @@
+{
+    "expires": "2015-09-28T15:03:20+00:00",
+    "urls": [
+        { 
+            "resource": "playlist.m3u", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?fileId=f984c1373d24f275a764f88f0fcafe7c",
+            "mimeType": "audio/x-mpegurl",
+            "size": 2000
+        },
+        { 
+            "resource": "8c57_0001.mp3", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0001.mp3",
+            "mimeType": "audio/mpeg",
+            "size": 311452
+        },
+        { 
+            "resource": "8c57_0001.smil", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0001.smil",
+            "mimeType": "application/smil+xml",
+            "size": 2000
+        },
+        { 
+            "resource": "8c57_0002.mp3", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0002.mp3",
+            "mimeType": "audio/mpeg",
+            "size": 311452
+        },
+        { 
+            "resource": "8c57_0002.smil", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0002.smil",
+            "mimeType": "application/smil+xml",
+            "size": 2000
+        },
+        { 
+            "resource": "8c57_0003.mp3", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0003.mp3",
+            "mimeType": "audio/mpeg",
+            "size": 311452
+        },
+        { 
+            "resource": "8c57_0003.smil", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0003.smil",
+            "mimeType": "application/smil+xml",
+            "size": 2000
+        },
+        { 
+            "resource": "8c57_0004.mp3", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0004.mp3",
+            "mimeType": "audio/mpeg",
+            "size": 311452
+        },
+        { 
+            "resource": "8c57_0004.smil", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0004.smil",
+            "mimeType": "application/smil+xml",
+            "size": 2000
+        },
+        { 
+            "resource": "8c57_0005.mp3", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0005.mp3",
+            "mimeType": "audio/mpeg",
+            "size": 311452
+        },
+        { 
+            "resource": "8c57_0005.smil", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0005.smil",
+            "mimeType": "application/smil+xml",
+            "size": 2000
+        },
+        { 
+            "resource": "8c57_0006.mp3", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0006.mp3",
+            "mimeType": "audio/mpeg",
+            "size": 311452
+        },
+        { 
+            "resource": "8c57_0006.smil", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=8c57_0006.smil",
+            "mimeType": "application/smil+xml",
+            "size": 2000
+        },
+        { 
+            "resource": "default.css", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=default.css"
+        },
+        { 
+            "resource": "master.smil", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=master.smil",
+            "mimeType": "application/smil+xml",
+            "size": 3876
+        },
+        { 
+            "resource": "ncc.html", 
+            "url": "http://arkiv2.tpb.sunet.se:80/ndsWeb/StreamDownloader?bookId=cf17a08f997689934fd6ff4c19cba65c&path=ncc.html",
+            "mimeType": "text/html",
+            "size": 17850
+        }
+    ]
+}

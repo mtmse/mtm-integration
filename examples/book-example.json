@@ -1,0 +1,26 @@
+{
+    "mediaNr": "C99654",
+    "format": "DAISY_202",
+    "fileset": {
+        "totalSize": 12300000,
+        "playbackDuration": "PT7M"
+    },
+    "metadata": {
+	    "title": "Trumma på trumman",
+	    "author": ["Kerstin Frii"],
+	    "isbn": "978-91-977084-3-2",
+	    "coverImageUrl": "http://legimus.se/app/covers/max50x100/C99654.png",
+	    "language": ["sv"],
+	    "narrator": ["Ellinor Sjödén"],
+	    "translator": ["Ann-Christine Relander"],
+	    "source": {
+	        "yearPublished": 2012,
+	        "publisher": "Nordstedts"
+	    },
+	    "published": "2011-05-06T00:00:00+02:00",
+	    "publisher": "MTM"
+    }
+    "production": {
+		"reimbursementEligible": true
+  	}
+}

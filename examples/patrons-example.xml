@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<patrons total="2" offset="0" limit="10">
+  <patron uuid="8a4aa3a1-4d74-470c-8280-a05b3106212c">
+    <pnr>19121212-1212</pnr>
+    <givenName>Tolvan</givenName>
+    <familyName>Tolvanson</familyName>
+    <email>tolvan.tolvanso@example.com</email>
+    <telephone>08-58002000</telephone>
+    <address>
+      <streetAddress>Tolvgatan 12</streetAddress>
+      <postalCode>12121</postalCode>
+      <addressLocality>Tolvgårda</addressLocality>
+    </address>
+    <library uuid="b9260088-9ff5-0c27-96f5-deaf959aeec3">
+      <name>Tolvgårda</name>
+    </library>
+    <currentBroadbandSubscriptionPeriod userUuid="0ccbd554-4a38-802e-f991-57a420920b22" usedBandwidth="34853" updated="2017-03-09T13:25:57.031+01:00" totalBandwidth="1000000" period="2017-02"/>
+  </patron>
+  <patron uuid="54437593-e4d8-483d-82cf-f62a094224a5">
+    <pnr>19060426-MTM1</pnr>
+    <givenName>Agda</givenName>
+    <familyName>Talbkenkommersdottir</familyName>
+    <email>ols.tbk.agda@example.com</email>
+    <telephone></telephone>
+    <address>
+      <streetAddress></streetAddress>
+      <postalCode></postalCode>
+      <addressLocality></addressLocality>
+    </address>
+    <literaryPreferenceNote>harry potter älskare</literaryPreferenceNote>
+    <library uuid="b9260088-9ff5-0c27-96f5-deaf959aeec3">
+      <name>Tolvgårda</name>
+    </library>
+  </patron>
+</patrons>

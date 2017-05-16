@@ -1,0 +1,26 @@
+{
+    "offset": 0,
+    "limit": 10,
+    "total": 3,
+
+    "bookshelfBooks": [
+        {
+            "mediaNr": "C16626",
+            "added": "2015-11-02T16:17:20+00:00",
+            "metadataUpdated": "2015-11-09T23:11::20+00:00",
+            "filesetUpdated": "2011-05-01T12:00:00+00:00"
+        },
+        {
+            "mediaNr": "C56708",
+            "added": "2015-11-02T16:17:20+00:00",
+            "metadataUpdated": "2010-01-01T23:11::20+00:00",
+            "filesetUpdated": "2011-05-01T12:00:00+00:00"
+        },
+        {
+            "mediaNr": "CA234678",
+            "added": "2015-11-02T16:17:20+00:00",
+            "metadataUpdated": "2015-11-09T216:51:20+00:00",
+            "filesetUpdated": "2011-05-01T12:00:00+00:00"
+        }
+    ]
+}

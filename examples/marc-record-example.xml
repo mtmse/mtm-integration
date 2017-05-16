@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record mtm:distributionType="REQUIRES_CONTACT_WITH_MTM" mtm:id="20004">
+        <leader>00857cam  22     7a     </leader>
+        <controlfield tag="001">1207994</controlfield>
+        <controlfield tag="007">fb</controlfield>
+        <controlfield tag="008">860529s1985    sw     j          1 swe  </controlfield>
+        <datafield ind1="3" ind2="0" tag="029">
+            <subfield code="a">P03236</subfield>
+        </datafield>
+        <datafield ind1="6" ind2="1" tag="029">
+            <subfield code="a">1207994</subfield>
+        </datafield>
+        <datafield ind1="6" ind2="1" tag="029">
+            <subfield code="a">1207995</subfield>
+        </datafield>
+        <datafield ind1="6" ind2="1" tag="029">
+            <subfield code="a">1207996</subfield>
+        </datafield>
+        <datafield ind1="1" ind2=" " tag="041">
+            <subfield code="a">swe</subfield>
+            <subfield code="h">dan</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="084">
+            <subfield code="a">Hcg/P</subfield>
+        </datafield>
+        <datafield ind1="1" ind2=" " tag="100">
+            <subfield code="a">Fisker, Robert</subfield>
+        </datafield>
+        <datafield ind1="0" ind2="0" tag="245">
+            <subfield code="a">Mickel Korp i Skanör</subfield>
+            <subfield code="h">Punktskrift</subfield>
+            <subfield code="c">Robert Fisker ; översättning: Sven Lundström</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="249">
+            <subfield code="a">Mikkel Ravn i Skanör</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="260">
+            <subfield code="a">Enskede</subfield>
+            <subfield code="b">TPB</subfield>
+            <subfield code="c">1985</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="300">
+            <subfield code="a">2 vol. (120 bl. med brailleskrift)</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="500">
+            <subfield code="a">Angående författarens härmed sammanhängande verk se: Mickel, Korpens pojke</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="500">
+            <subfield code="a">Fullskrift</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="500">
+            <subfield code="a">Första svenska upplaga för boken 1977. Förlag: Opal</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="520">
+            <subfield code="a">Mickel Korp från Lolland kommer till Skanör under sillfisket</subfield>
+        </datafield>
+        <datafield ind1="9" ind2="1" tag="596">
+            <subfield code="h">Punktskrift</subfield>
+            <subfield code="m">Punktskrift</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="599">
+            <subfield code="a">0190</subfield>
+            <subfield code="d">19860529</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="653">
+            <subfield code="a">Förr i tiden</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="852">
+            <subfield code="h">Hcg/P</subfield>
+        </datafield>
+        <datafield ind1="0" ind2=" " tag="887">
+            <subfield code="2">BURK IV</subfield>
+            <subfield code="b">KABESWSW0190SWES BD</subfield>
+        </datafield>
+        <datafield ind1="2" ind2=" " tag="887">
+            <subfield code="a">009</subfield>
+            <subfield code="2">BURK IV</subfield>
+            <subfield code="o">02</subfield>
+        </datafield>
+    </record>

@@ -1,0 +1,46 @@
+# /catalog/tpbmarc:
+
+  is: [requiresSitekey, fallible]
+  get:
+    description: |
+     Retrieves a list of marc 21 slim records
+    queryParameters:
+      ids:
+        description: A list of mediaNrs separated by comma
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/xml:
+            example: !include ../examples/marc-record-example.xml
+            
+  /{mediaNr}:
+    is: [requiresSitekey, fallible]
+    uriParameters:
+      id:
+        description: |
+          The mediaNr of the book to retrieve
+    get:
+      description: |
+        Retrieves a single marc 21 slim record identified by specified mediaNr
+      responses:
+        200:
+          body:
+            application/xml:
+              example: !include ../examples/marc-record-example.xml
+              
+  /modified/{sinceTime}:
+    is: [requiresSitekey, fallible, paginated]
+    uriParameters:
+      sinceTime:
+        description: 
+           The date the records last was modified 
+    get:
+      description: |
+        Returns a limited list of book identifiers with related information about the book's status change, since a given date-time.
+      responses:
+        200:
+          body:
+            application/xml:
+              example: !include ../examples/marc-record-id-example.xml

@@ -1,0 +1,21 @@
+# /user
+is: [requiresSitekeyAndTicket, fallible]
+description: |
+  Manage the curren user.
+
+  (Requires sitekey and ticket)
+
+get:
+  description: |
+    View basic information about the current user.
+
+  responses:
+    200:
+      description: |
+        Basic data about the user was retrieved successfully.
+      body:
+        application/xml:
+          example: !include ../examples/user-example.xml
+        application/json:
+          schema: !include ../schemas/user-schema.json
+          example: !include ../examples/user-example.json

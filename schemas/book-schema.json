@@ -1,0 +1,109 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "mediaNr": {
+            "type": "string",
+            "description": "MTM media specific identifier."
+        },
+        "format": {
+            "type": "string",
+            "description": "MTM distributable media formats.",
+            "enum": ["DAISY_202", "PEF", "TEXTVIEW", "TKN", "DTB"]
+        },
+        "fileset": {
+            "type": "object",
+            "description": "Information about the actual files containing the literary work.",
+            "required": ["totalSize"],
+            "properties": {
+                "totalSize": {
+                    "type": "number",
+                    "description": "The fileset size in bytes."
+                },
+                "playbackDuration": {
+                   "type": "string",
+                   "description": "ISO 8601 duration format. The total playback duration of the media."
+                }
+            }
+        },
+        "metadata": {
+            "type": "object",
+            "description": "Meta data describing the book source of the media.",
+            "required": ["title", "author", "language"],
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "author": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Full name of author."
+                    }
+                },
+                "isbn": {
+                    "type": "string",
+                    "description": "International Standard Book Number of the source material. Missing ISBN is returned as an empty string."
+                },
+                "coverImageUrl": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Langauge(s) used in the book. Language codes according to ISO 639-1, see http://www.loc.gov/standards/iso639-2/php/code_list.php"
+                    }
+                },
+                "narrator": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "The names of persons reading the book."
+                    }
+                },
+                "translator": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "The names of book translators."
+                    }
+                },
+                "source": {
+                    "type": "object",
+                    "description": "Source publishing information",
+                    "required": ["yearPublished", "publisher"],
+                     "properties": {
+                         "yearPublished": {
+                             "type": "integer",
+                             "description": "The year the book was published"
+                         },
+                         "publisher": {
+                             "type": "string",
+                             "description": "The name of the source publisher of the media."
+                         }
+                     }
+                },
+                "publisher": {
+                    "type": "string",
+                    "description": "The name of the publisher of the media."
+                },
+                "published": {
+                    "type": "string",
+                    "description": "The date when the media was made distributable through this service. Date according ISO 8601 without a time part, see https://www.w3.org/TR/NOTE-datetime"
+                }
+            }
+        },
+        "production": {
+          "type": "object",
+          "description": "",
+          "required": ["reimbursementEligible"],
+          "properties": {
+            "reimbursementEligible": {
+              "type": "boolean",
+              "description": "If a swedish author is eligble for reimbursement for production of audio book"
+            }
+          }
+	    } 
+    }
+}

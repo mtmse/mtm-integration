@@ -1,0 +1,25 @@
+{
+    "uuid": "48ef1580-65e5-11e5-8b9b-9edb9d6e46f5",
+    "pnr": "19121212-1212",
+    "givenName": "Tolvan",
+    "familyName": "Tolvansson",
+    "email": "tolvan.tolvanso@example.com",
+    "telephone": "08-58002000",
+    "address": {
+        "streetAddress": "Tolvgatan 12",
+        "postalCode": "12121",
+        "addressLocality": "Tolvgårda"
+    },
+    "library": {
+      "uuid": "b9260088-9ff5-0c27-96f5-deaf959aeec3",
+      "name": "Textalk"
+    },
+    "literaryPreferenceNote": "Really enjoys Harry potter",
+    "currentBroadbandSubscriptionPeriod": {
+		"userUuid": "0ccbd554-4a38-802e-f991-57a420920b22",
+		"usedBandwidth": 3453463,
+		"updated": "2017-03-09T13:25:57.031+01:00",
+		"totalBandwidth": 1000000000,
+		"period": "2017-02"
+    }
+}
