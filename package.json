@@ -1,11 +1,10 @@
 {
   "name": "services-api-doc",
-  "version": "1.20.0",
+  "version": "1.23.0",
   "description": "RAML API doc for (new) services",
   "scripts": {
-    "build-doc-tbk": "gulp tbk",
-    "build-doc-alis": "gulp alis",
-    "validate-json": "node validate.js"
+    "build-doc-tbk": "raml2html tbk-api.raml > build/tbk-api.html",
+    "build-doc-alis": "raml2html alis-api.raml > build/alis-api.html"
   },
   "keywords": [
     "mtm",
